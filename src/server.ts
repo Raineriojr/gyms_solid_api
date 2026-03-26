@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { env } from "../env.schema";
 import { app } from "./app";
 
