@@ -1,13 +1,12 @@
 import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
 import { defineConfig } from "eslint/config";
-
 import pluginImport from "eslint-plugin-import";
 import unusedImports from "eslint-plugin-unused-imports";
+import globals from "globals";
+import tseslint from "typescript-eslint";
 
-const importPlugin = (pluginImport as any).default ?? pluginImport;
-const unusedImportsPlugin = (unusedImports as any).default ?? unusedImports;
+const importPlugin = pluginImport;
+const unusedImportsPlugin = unusedImports;
 
 export default defineConfig([
   {
@@ -34,7 +33,7 @@ export default defineConfig([
       "comma-dangle": ["error", "always-multiline"],
 
       // 🔥 boas práticas
-      "no-console": "warn",
+      "no-console": ["warn", "error", { allow: ["error"] }],
       "no-var": "error",
       "prefer-const": "error",
       eqeqeq: ["error", "always"],
