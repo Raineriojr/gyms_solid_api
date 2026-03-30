@@ -7,7 +7,10 @@
     "start": "node build/server.js",
     "dev": "tsx --watch src/server.ts",
     "lint:fix": "eslint src --ext .ts --fix",
-    "build": "tsup src --out-dir build"
+    "build": "tsup src --out-dir build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +28,7 @@
     "@eslint/js": "9.39.4",
     "@types/bcrypt": "6.0.0",
     "@types/node": "25.5.0",
+    "@vitest/coverage-v8": "4.1.2",
     "eslint": "9.39.4",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-import": "2.32.0",
@@ -37,6 +41,7 @@
     "tsup": "8.5.1",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.57.2"
+    "typescript-eslint": "8.57.2",
+    "vitest": "4.1.2"
   }
 }
