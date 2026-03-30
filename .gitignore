@@ -8,3 +8,6 @@ build
 # environments
 .env
 /generated/prisma
+
+#tests
+coverage
