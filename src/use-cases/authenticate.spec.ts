@@ -1,15 +1,20 @@
-import { describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it } from "vitest";
 import { hash } from "bcrypt";
 import { AuthenticateUseCase } from "./authenticate-use-case";
 
-import { InMemoryUsersRepository } from "@/repositories/in-memory/in-memory-users-respository";
+import { InMemoryUsersRepository } from "@/repositories/in-memory/in-memory-users-repository";
 import { InvalidCredentialsError } from "./errors/invalid-credentials-error";
 
-describe("Authenticate use case", () => {
-  it("should be able to authenticate", async () => {
-    const inMemoryUsersRepository = new InMemoryUsersRepository();
-    const sut = new AuthenticateUseCase(inMemoryUsersRepository);
+let inMemoryUsersRepository: InMemoryUsersRepository;
+let sut: AuthenticateUseCase;
 
+describe("Authenticate use case", () => {
+  beforeEach(() => {
+    inMemoryUsersRepository = new InMemoryUsersRepository();
+    sut = new AuthenticateUseCase(inMemoryUsersRepository);
+  });
+
+  it("should be able to authenticate", async () => {
     await inMemoryUsersRepository.create({
       name: "user test",
       email: "test@test.com",
@@ -25,9 +30,6 @@ describe("Authenticate use case", () => {
   });
 
   it("should not be able to authenticate with wrong email", async () => {
-    const inMemoryUsersRepository = new InMemoryUsersRepository();
-    const sut = new AuthenticateUseCase(inMemoryUsersRepository);
-
     await expect(async () => {
       await sut.execute({
         email: "test@test.com",
@@ -37,9 +39,6 @@ describe("Authenticate use case", () => {
   });
 
   it("should not be able to authenticate with wrong password", async () => {
-    const inMemoryUsersRepository = new InMemoryUsersRepository();
-    const sut = new AuthenticateUseCase(inMemoryUsersRepository);
-
     await inMemoryUsersRepository.create({
       name: "user test",
       email: "test@test.com",
