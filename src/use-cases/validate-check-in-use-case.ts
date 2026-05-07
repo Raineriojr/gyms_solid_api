@@ -1,4 +1,4 @@
-import type { CheckIn } from "generated/prisma/client";
+import type { CheckIn } from "../../generated/prisma/client";
 import type { ICheckInsRepository } from "@/repositories/check-ins-repository";
 import { ResourceNotFoundError } from "./errors/resource-not-found-error";
 import dayjs from "dayjs";

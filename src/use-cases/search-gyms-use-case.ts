@@ -1,4 +1,4 @@
-import type { Gym } from "generated/prisma/client";
+import type { Gym } from "../../generated/prisma/client";
 
 import type { IGymsRepository } from "@/repositories/gyms-repository";
 

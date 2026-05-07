@@ -2,7 +2,7 @@ import { hash } from "bcrypt";
 
 import type { IUsersRepository } from "@/repositories/users-repository";
 import { UserAlreadyEmailExistsError } from "./errors/user-already-email-exists-error";
-import type { User } from "generated/prisma/client";
+import type { User } from "../../generated/prisma/browser";
 
 interface IRegisterUseCaseRequest {
   name: string;
