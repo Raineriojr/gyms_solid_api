@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
-import type { User } from "generated/prisma/client";
-import type { UserCreateInput } from "generated/prisma/models";
+import type { User } from "../../../generated/prisma/client";
+import type { UserCreateInput } from "../../../generated/prisma/models";
 
 import type { IUsersRepository } from "../users-repository";
 
