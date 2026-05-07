@@ -1,4 +1,4 @@
-import type { CheckIn, Prisma } from "generated/prisma/browser";
+import type { CheckIn, Prisma } from "../../../generated/prisma/browser";
 import type { ICheckInsRepository } from "../check-ins-repository";
 
 import { prisma } from "@/lib/prisma";
