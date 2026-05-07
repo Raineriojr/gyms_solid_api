@@ -17,6 +17,9 @@ export class PrismaUsersRepository implements IUsersRepository {
       where: {
         id,
       },
+      omit: {
+        password_hash: true,
+      },
     });
 
     if (!user) return null;
