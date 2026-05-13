@@ -7,7 +7,7 @@ import { validateController } from "./validate.controller";
 import { historyController } from "./history.controller";
 import { metricsController } from "./metrics.controller";
 
-export async function gymsRoutes(app: FastifyInstance) {
+export async function checkInsRoutes(app: FastifyInstance) {
   app.addHook("onRequest", verifyJWt);
 
   app.get("/check-ins/history", historyController);

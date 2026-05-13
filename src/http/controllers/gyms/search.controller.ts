@@ -12,7 +12,7 @@ export async function searchGymsController(
     page: z.coerce.number().min(1).default(1),
   });
 
-  const { page, query } = searchGymsQuerySchema.parse(req.params);
+  const { page, query } = searchGymsQuerySchema.parse(req.query);
 
   const createGymUseCase = makeSearchGymsUseCase();
 
@@ -21,7 +21,7 @@ export async function searchGymsController(
     query,
   });
 
-  return reply.status(201).send({
+  return reply.status(200).send({
     gyms,
   });
 }
