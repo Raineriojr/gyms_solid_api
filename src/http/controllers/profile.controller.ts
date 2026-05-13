@@ -11,5 +11,5 @@ export async function profileController(
     userId: req.user.sub,
   });
 
-  return reply.status(201).send({ user });
+  return reply.status(200).send({ user });
 }
