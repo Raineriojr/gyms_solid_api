@@ -5,7 +5,8 @@
     // "rootDir": "./src",
     // "outDir": "./dist",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@prisma/*": ["./generated/prisma/*"]
     },
 
     // Environment Settings

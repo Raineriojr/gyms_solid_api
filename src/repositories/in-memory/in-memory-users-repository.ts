@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
-import type { User } from "../../../generated/prisma/client";
-import type { UserCreateInput } from "../../../generated/prisma/models";
+import type { User } from "@prisma/client";
+import type { UserCreateInput } from "@prisma/models";
 
 import type { IUsersRepository } from "../users-repository";
 
@@ -32,6 +32,7 @@ export class InMemoryUsersRepository implements IUsersRepository {
       id: randomUUID(),
       name: data.name,
       email: data.email,
+      role: "MEMBER",
       password_hash: data.password_hash,
       createdAt: new Date(),
     };

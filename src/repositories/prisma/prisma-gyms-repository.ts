@@ -1,10 +1,10 @@
-import type { GymCreateInput } from "../../../generated/prisma/models";
+import type { GymCreateInput } from "@prisma/models";
 import type {
   IFindManyNearbyParams,
   IGymsRepository,
 } from "../gyms-repository";
 import { prisma } from "@/lib/prisma";
-import type { Gym } from "../../../generated/prisma/client";
+import type { Gym } from "@prisma/client";
 
 export class PrismaGymsRepository implements IGymsRepository {
   async findById(id: string) {

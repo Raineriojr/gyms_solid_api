@@ -1,4 +1,4 @@
-import type { CheckIn } from "../../generated/prisma/client";
+import type { CheckIn } from "@prisma/client";
 import type { ICheckInsRepository } from "@/repositories/check-ins-repository";
 import type { IGymsRepository } from "@/repositories/gyms-repository";
 import { ResourceNotFoundError } from "./errors/resource-not-found-error";
